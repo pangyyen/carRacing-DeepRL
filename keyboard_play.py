@@ -19,13 +19,7 @@ def play_continuous_mode():
         "dw": np.array([1, 0.7, 0]),"db": np.array([1, 0, 1]),
         "ab": np.array([-1, 0, 1]),},
         noop=np.array([0,0,0]))
-
-
-
-# def callback(obs_t, obs_tp1, action, reward, terminated, truncated, info):
-#        return [reward, info, action]
-   
-# plotter = PlayPlot(callback, horizon_timesteps=10, plot_names=["Immediate Rew.", "info", "Action Magnitude"])  
+ 
 
 def play_discrete_mode():
     play(gym.make("CarRacing-v2", continuous=False, render_mode="rgb_array", ), keys_to_action={
@@ -36,6 +30,9 @@ def play_discrete_mode():
         },
         noop=0,
     )
-    
+
+# to play the game, run `python keyboard_play.py` in the terminal of current directory 
+# you can change the game mode by commenting out the mode you don't want to play
+
 # play_continuous_mode()
 play_discrete_mode()
